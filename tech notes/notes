@@ -1,0 +1,57 @@
+Technologies used in Nimbus framework
+	Java 1.8
+	Spring MVC
+	Spring boot
+	Spring cloud
+	Angular 5 
+	Karma 
+	Maven  
+	Mongo db  - 3.4 version
+	
+
+
+Architecture of the Nimbus framework, with a specific focus on any two of the technologies used.	
+
+Spring boot : 
+
+	It is the simplification for Spring MVC and can be developed in just few steps. 
+	In pom.xml, we need to have the below dependencies
+	Step 1:
+		<parent>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-parent</artifactId>
+			<spring.boot.version></spring.boot.version>
+		</parent>
+		
+		<dependency>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-starter-web</artifactId>
+	            <version>${spring-boot.version}</version>
+	     </dependency>
+	Step 2: 
+		 we need to create a standalone java class
+		 and declare @SpringBootApplication annotation at class level
+	Step 3:
+		 In the main method we need to call the static method, which is 
+		 SpringApplication.run(.class, args);
+
+		 
+How @Config annotations are used in the framework with examples. 
+
+	In Nimbus framework it is used to execute a common set of instructions for a given action
+	Given an action, a particular function handler can be executed by specifying a value for the query parameter fn.
+	
+	Example configuration for a _set function handler
+	@Config(url="/p/patient:<!/.m/id!>/_process?fn=_set")
+	
+	In the example above, process is the Action and set is the Function Handler we have configured to execute as a part of this @Config configuration.
+	
+	Few of the Predefined Function Handlers
+	
+	Handler   	 			Action
+	_param     		 		_get
+	_default                _nav
+	_initEntity             _new
+	_add                    _process
+	_addCollection          _process 
+	
